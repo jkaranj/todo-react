@@ -1,38 +1,192 @@
-.App {
-  text-align: center;
+body {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(
+      45deg,
+      rgba(247, 0, 255, 0.4),
+      rgba(31, 135, 231, 0.4)
+    ),
+    url("./bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.mainContainer {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 70%;
+  margin: auto;
+  margin-top: 3%;
+  padding-top: 2%;
+  padding-bottom: 3%;
+  margin-bottom: 3%;
+  text-align: center;
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.712);
+  position: relative;
+  background: inherit;
+  overflow: hidden;
+  backdrop-filter: blur(5px);
+  z-index: 1;
+  border-radius: 15px;
+}
+.mainContainer:before {
+  content: "";
+  position: absolute;
+  background: inherit;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.5);
+  filter: blur(50%);
+  margin: -20px;
+  z-index: -1;
+}
+.categories {
+  flex-direction: row;
+}
+.categories button {
+  background: none;
+  min-width: 5%;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 10px 0px 10px 0px;
+  border: 2px solid rgba(0, 0, 0, 0.8);
+}
+form {
+  padding: 2%;
+}
+.add {
+  width: 10%;
+  margin: 1%;
+  border-radius: 15px;
+  background: none;
+  border: 1px solid rgb(255, 255, 255);
+  transition: 0.3s;
+}
+.add:hover {
+  background-color: rgba(132, 235, 141, 0.5);
+  content: "add";
+}
+input[type="text"] {
+  width: 40%;
+  background: none;
+  border: none;
+  /* border-top: 2px solid rgba(255, 255, 255, 0.5); */
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  /* border-radius: 20px; */
+  padding: 2px;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+::placeholder {
+  color: rgba(0, 0, 0, 0.7);
+}
+h1 {
+  font-size: 3rem;
+  color: beige;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  height: 45vh;
+  width: 80%;
+  overflow-y: scroll;
+  background-color: rgba(255, 255, 255, 0.2);
+  /* padding-bottom: 2px; */
+  text-align: center;
+  border-radius: 20px 20px 0 0;
+}
+.content::-webkit-scrollbar {
+  display: none;
 }
 
-.App-link {
-  color: #61dafb;
+/* Hide scrollbar for IE, Edge and Firefox */
+.content {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.dot {
+  height: 25px;
+  width: 25px;
+  /* background-color: rgb(255, 0, 0); */
+  border: 1px solid rgb(255, 0, 0);
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0px 50px;
+}
+.done {
+  height: 25px;
+  width: 25px;
+  background-color: rgb(37, 182, 32);
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0px 50px;
+}
+.taskk {
+  color: rgb(79, 11, 168);
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.task-done {
+  color: rgb(0, 0, 0);
+  font-size: 1.2rem;
+  text-decoration: line-through;
+}
+.deltaskbutt {
+  margin: 10px 50px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.712);
+  border-radius: 20px;
+  padding: 5px 20px;
+  color: crimson;
+  transition: 0.5s;
+}
+.deltaskbutt:hover {
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* .list {
+  list-style: none;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #494949;
 }
+body {
+  background-color: rgb(255, 210, 151);
+}
+h1,
+h3,
+h4 {
+  color: rgb(255, 255, 255);
+}
+.mainContainer {
+  margin: auto;
+  padding-bottom: 10%;
+  height: 100vh;
+  text-align: center;
+}
+.content {
+  height: 60vh;
+  overflow-y: scroll;
+}
+input[type="text"] {
+  background: none;
+  border: none;
+  border-bottom: 2px solid rgb(46, 46, 46);
+  margin: 2%;
+  width: 40%;
+}
+.deltaskbutt {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+}
+.taskk {
+  color: blueviolet;
+} */
