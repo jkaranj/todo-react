@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
+// import "./indeex.css";
 // import InputField from "./components/inputField";
 // import CategoryType from "./components/category";
 
